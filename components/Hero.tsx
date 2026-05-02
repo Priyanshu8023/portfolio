@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import { anton , unbounded } from "@/lib/font"
 // import { useHeroAnimaion } from "@/hooks/useHeroAnimaion"
 
@@ -26,6 +27,32 @@ export default function Hero() {
               Crafting Seamless experiences,
               <br /> one line at a time.
             </p>
+          </div>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3 px-4">
+            <Link
+              href="/about"
+              className="rounded-md border border-white/35 px-5 py-2 text-sm text-white hover:bg-white hover:text-black transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/projects"
+              className="rounded-md border border-white/35 px-5 py-2 text-sm text-white hover:bg-white hover:text-black transition-colors"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/skills"
+              className="rounded-md border border-white/35 px-5 py-2 text-sm text-white hover:bg-white hover:text-black transition-colors"
+            >
+              Skills
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-md border border-white/35 px-5 py-2 text-sm text-white hover:bg-white hover:text-black transition-colors"
+            >
+              Contact
+            </Link>
           </div>
        </div>
     </>
