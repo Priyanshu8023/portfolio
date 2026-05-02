@@ -36,10 +36,15 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
           script: |
-            cd /root/portfolio
             # Pull the latest image from Docker Hub
-            docker compose pull
-            # Restart the services with the new image
-            docker compose up -d
-            # Optional: Clean up old images to save space on EC2
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
+            
+            # Stop and remove the existing container if it exists
+            docker stop portfolio || true
+            docker rm portfolio || true
+            
+            # Run the new container
+            docker run -d --name portfolio -p 80:3000 ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
+            
+            # Clean up old images to save space on EC2
             docker image prune -f
