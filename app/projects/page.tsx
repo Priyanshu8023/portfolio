@@ -19,20 +19,12 @@ export default function ProjectsPage() {
             </li>
           ))}
         </ul>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <Link
-            href="/race-bug-demo"
-            className="inline-block rounded-md border border-amber-500/40 px-5 py-2 text-sm text-amber-200/90 hover:bg-amber-500/20 transition-colors"
-          >
-            Demo: async race bug
-          </Link>
-          <Link
-            href="/"
-            className="inline-block rounded-md border border-white/35 px-5 py-2 text-sm hover:bg-white hover:text-black transition-colors"
-          >
-            Back to Home
-          </Link>
-        </div>
+        <Link
+          href="/"
+          className="mt-10 inline-block rounded-md border border-white/35 px-5 py-2 text-sm hover:bg-white hover:text-black transition-colors"
+        >
+          Back to Home
+        </Link>
       </div>
     </main>
   );
